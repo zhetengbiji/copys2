@@ -1,0 +1,19 @@
+{
+  "name": "copys2",
+  "version": "0.0.2",
+  "description": "copys2",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "keywords": [
+    "copy"
+  ],
+  "author": "guoshengqiang",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sequence": "^0.4.6"
+  }
+}
