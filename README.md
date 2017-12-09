@@ -14,7 +14,8 @@ var dsts = [
     'test3.txt',
     'test4.txt',
 ]
-copys2(srcs, dsts, () => {
-    console.log('ok')
-})
+copys2(srcs, dsts)
+    .then(() => {
+        console.log('ok')
+    })
 ```

@@ -17,19 +17,22 @@ function copy(src, dst, cb) {
 
 function copys2(srcs, dsts, cb) {
     if(srcs.length !== dsts.length) {
-        throw new Error('路径数组不相等')
+        return Promise.reject('路径数组不相等')
     }
-    var i = 0;
-    var MAX = srcs.length;
-    function end() {
-        i++;
-        if(i === MAX && typeof cb === 'function') {
-            cb()
+    return new Promise((resolve, reject) => {
+        var i = 0
+        var MAX = srcs.length
+        function end() {
+            i++;
+            if(i === MAX && typeof cb === 'function') {
+                cb()
+            }
+            resolve()
         }
-    }
-    srcs.forEach((src, i) => {
-        copy(src, dsts[i], end)
-    }, this)
+        srcs.forEach((src, i) => {
+            copy(src, dsts[i], end)
+        }, this)
+    })
 }
 
 module.exports = copys2

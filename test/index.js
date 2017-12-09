@@ -8,6 +8,7 @@ var dsts = [
     path.join(__dirname, 'dst', 'test3.txt'),
     path.join(__dirname, 'dst', 'test4.txt'),
 ]
-copys2(srcs, dsts, () => {
-    console.log('ok')
-})
+copys2(srcs, dsts)
+    .then(() => {
+        console.log('ok')
+    })
